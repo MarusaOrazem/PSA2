@@ -1,5 +1,5 @@
  /*Naloga 1: Varnost pri delu
- Maruša Oražem, 27151090
+ MaruÅ¡a OraÅ¾em
  matematika, 2. letnik*/
 
 
@@ -24,7 +24,7 @@ struct Node {
         levo = levo_novi;
         desno = desno_novi;
         sredina = (levo+desno)/2;
-        // -1 zato da se tam ustavii, da vemo da je to list, èisto spodaj. butasto napisano
+        // -1 zato da se tam ustavii, da vemo da je to list, Ã¨isto spodaj. butasto napisano
         if (levo == -1) {return;}
         else if (desno == -1) {return;}
         else if (desno - levo == 1) {
@@ -36,7 +36,7 @@ struct Node {
             right = new Node(sredina, desno);
         }
     }
-//damo interval v drevo, prištejo 1 kjer se ujema
+//damo interval v drevo, priÅ¡tejo 1 kjer se ujema
     void zacni(int a,int b) {
 
         if (levo == -1 || desno == -1) {
@@ -44,27 +44,27 @@ struct Node {
 
         }
 
-        //èe je enako intervalu
+        //Ã¨e je enako intervalu
         else if (a == levo && b == desno) {
             stevilo++;
         }
-        //èe je na levem podintervalu od intervala
+        //Ã¨e je na levem podintervalu od intervala
         else if(a >= levo && b <= sredina ) {
             left-> zacni(a,b);
         }
-        //èe je v desnem podintervalu
+        //Ã¨e je v desnem podintervalu
         else if(a > sredina && b <= desno) {
             right->zacni(a,b);
         }
-        //èe je interval nekje na sredini, malo levo malo desno
+        //Ã¨e je interval nekje na sredini, malo levo malo desno
         else {
-            //razbijemo interval na sredini od vozlišèa, saj se tko delijo potem otroci
+            //razbijemo interval na sredini od vozliÅ¡Ã¨a, saj se tko delijo potem otroci
             left->zacni(a,sredina);
             right->zacni(sredina,b);
         }
     }
 
-//enako kot konèaj samo da odšteje 1
+//enako kot konÃ¨aj samo da odÅ¡teje 1
     void koncaj(int a,int b) {
 
 
@@ -73,30 +73,30 @@ struct Node {
 
         }
 
-        //èe je enako intervalu
+        //Ã¨e je enako intervalu
         else if (a == levo && b == desno) {
             stevilo--;
         }
-        //èe je na levem podintervalu od intervala
+        //Ã¨e je na levem podintervalu od intervala
         else if(a >= levo && b <= sredina ) {
             left-> koncaj(a,b);
         }
-        //èe je v desnem podintervalu
+        //Ã¨e je v desnem podintervalu
         else if(a > sredina && b <= desno) {
             right->koncaj(a,b);
         }
-        //èe je interval nekje na sredini, malo levo malo desno
+        //Ã¨e je interval nekje na sredini, malo levo malo desno
         else {
-            //razbijemo interval na sredini od vozlišèa, saj se tko delijo potem otroci
+            //razbijemo interval na sredini od vozliÅ¡Ã¨a, saj se tko delijo potem otroci
             left->koncaj(a,sredina);
             right->koncaj(sredina,b);
         }
     }
 
-    //inšpekcija gre od korena do lista kjer je x, spotoma sešteva delavce
+    //inÅ¡pekcija gre od korena do lista kjer je x, spotoma seÅ¡teva delavce
     int inspekcija(int x) {
-        //x je lahko ali levo ali desno od sredine, pogledamo kje in išèemo naprej x, spotoma seštevamo delavce
-        //èe smo že prišli do konca
+        //x je lahko ali levo ali desno od sredine, pogledamo kje in iÅ¡Ã¨emo naprej x, spotoma seÅ¡tevamo delavce
+        //Ã¨e smo Å¾e priÅ¡li do konca
         if (levo == -1 || desno == -1) {
             return stevilo;
         }
@@ -122,7 +122,7 @@ struct Node {
 
 
 int main() {
-int D,P; //D število delavcev, P število inšekcijskih pregledov
+int D,P; //D Å¡tevilo delavcev, P Å¡tevilo inÅ¡ekcijskih pregledov
 cin >> D >> P;
 
 
@@ -152,7 +152,7 @@ for (int i = 0; i < D; i++) {
 	krajisca.push_back(odsek_zac);
 	krajisca.push_back(odsek_konec);
 }
-//shranimo si inšekcije
+//shranimo si inÅ¡ekcije
 for (int i = 0; i < P; i++) {
     int insp_cas, insp_odsek;
     cin >> insp_cas >> insp_odsek;
@@ -165,26 +165,26 @@ for (int i = 0; i < P; i++) {
     krajisca.push_back(insp_odsek);
 }
 
-//uredimo po èasu
+//uredimo po Ã¨asu
 sort(dogodki.begin(), dogodki.end());
 
-//shranimo si krajisca da vemo kje se kej dogaja, ostalih številk ne rabimo,
+//shranimo si krajisca da vemo kje se kej dogaja, ostalih Å¡tevilk ne rabimo,
 //sortiramo, odstranimo ponavljanja
 sort(krajisca.begin(), krajisca.end());
 krajisca.erase( unique( krajisca.begin(), krajisca.end() ), krajisca.end() );
 //cout<<"dolzina "<<krajisca.size()<<endl;
 
-//pogledamo koliko je najbližja potenca 2-ke da bomo vedeli koliko rabimo za drevo
+//pogledamo koliko je najbliÅ¾ja potenca 2-ke da bomo vedeli koliko rabimo za drevo
 int st_elementov = pow(2,ceil(log2(krajisca.size())));
 //cout<<"stelementov " << st_elementov <<endl;
 
 int rezultat;
-//zgradimo polno dvojiško drevo
+//zgradimo polno dvojiÅ¡ko drevo
 Node* root = new Node(0,st_elementov);
 
 
-//po vrsti dodajamo in brišemo delavce, naredimo inšekcijo
-//potrebno je poiskat nove indekse v seznamu krajišè, ker delamo na manjšem drevesu
+//po vrsti dodajamo in briÅ¡emo delavce, naredimo inÅ¡ekcijo
+//potrebno je poiskat nove indekse v seznamu krajiÅ¡Ã¨, ker delamo na manjÅ¡em drevesu
 for (int i = 0; i< dogodki.size(); i++) {
     if (dogodki[i][1] == 0) {
         int indeks1 = (lower_bound (krajisca.begin(), krajisca.end(), dogodki[i][2]))-krajisca.begin();
