@@ -1,5 +1,5 @@
  /*Naloga 1: Prepogosto
- Maruöa Oraûem, 27151090
+ Maru≈°a Ora≈æem
  matematika, 2. letnik*/
 
 
@@ -38,7 +38,7 @@ int main() {
     stevila[0] = S1;
     stevila[1] = S2;
 
-    //naredi seznam ötevil
+    //naredi seznam ≈°tevil
     int novo;
     long long a;
     long long b;
@@ -53,7 +53,7 @@ int main() {
         cout  << stevila[a] << " ";
     } cout << endl;*/
 
-    //preöteje ponovitve od zadaj, ko jih je preveË, namesto öt napiöe -1
+    //pre≈°teje ponovitve od zadaj, ko jih je preve√®, namesto ≈°t napi≈°e -1
 
     int trenutno;
     for (int j = N-1; j>=0; --j) {
@@ -70,7 +70,7 @@ int main() {
     for (int b = 0; b<N; ++b){
         cout  << stevila[b] << " ";
     }cout << endl;*/
-    //izpiöe ötevila razn Ëe je -1
+    //izpi≈°e ≈°tevila razn √®e je -1
 
     int j = 0;
     for (int i = 0; i<N;++i){
