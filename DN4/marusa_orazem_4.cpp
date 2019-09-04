@@ -1,5 +1,5 @@
 //Naloga 4: Enaki nizi
-//Maruöa Oraûem, 27151090
+//Maru≈°a Ora≈æem
 //Matematika, drugi letnik
 
 #include <iostream>
@@ -8,13 +8,13 @@
 using namespace std;
 
 //ideja najdena na spletni strani https://www.geeksforgeeks.org/check-whether-two-strings-are-equivalent-or-not-according-to-given-condition/?fbclid=IwAR295LOcELUpCEAI0ZvOsry1M4qyfJgiRjA9S5xBEFO0Y5m4lJKarGgEfsA
-//ubistvu je identiËno, samo da mi razbijamo nize na 3 dele, namesto samo na 2
-//zelo lahka naloga, Ëe le znaö malo pogooglat :)
+//ubistvu je identi√®no, samo da mi razbijamo nize na 3 dele, namesto samo na 2
+//zelo lahka naloga, √®e le zna≈° malo pogooglat :)
 
-//funkcija vrne besedo, ki jo dobimo Ëe damo besedo na 3 dele in "uredimo po abecedi vsak del"
+//funkcija vrne besedo, ki jo dobimo √®e damo besedo na 3 dele in "uredimo po abecedi vsak del"
 
 string urejeno(string x) {
-    //ko in Ëe pridemo do dolûine 1
+    //ko in √®e pridemo do dol≈æine 1
     if (x.size() == 1) {
         return x;
     }
