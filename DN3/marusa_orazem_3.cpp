@@ -1,5 +1,5 @@
 // Naloga 3: Izštevanka
-// Maruša Oražem, 27151090
+// Maruša Oražem
 // matematika, 2. letnik
 
 
